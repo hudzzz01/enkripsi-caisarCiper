@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title> Caisar Chiper </title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+   
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+
+        <style>
+            .mycontainer{
+                color: black;
+                margin-top: 25px;
+                background-image: url("tes.jpg");
+            }
+
+        </style>
+
+
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">Hudzaa</a>
+                
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">Caisar Chiper </h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">Code Sederhana Buatan Hudza. Itadakimasu </h2>
+                        <a class="btn btn-primary" href="#about" id="start">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <header class="mycontainer">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">Enkrip </h1>
+                        <input id="input1" type="text" size="25" style="display: block;" placeholder="Masukan pesan yang ingin di enkripsi sebanyak banyaknya">
+                     
+                        <input id="kunci1" type="text" size="10" style="display: block; margin-top: 25px;" placeholder="kunci 1-100">
+                       
+                       
+
+                        <a class="btn btn-primary" id="enkripsiButton" >Enkripsi</a>
+                    </div>
+                </div>
+            
+                <div style="width:100px;">
+                    <p id="hasilEnkrip" style="margin-left: 10px; color:rgb(23, 24, 24); word-wrap: break-word;" ></p>
+                    
+                </div>
+            </div>
+        </header>
+        <header class="mycontainer" style='background-image:url("tes2.jpg");'>
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">Dekrip </h1>
+                        <input id="input2" type="text" size="25" style="display: block;" placeholder="Masukan pesan yang ingin di dekripsi sebanyak banyaknya">
+                     
+                        <input id="kunci2" type="text" size="10" style="display: block; margin-top: 25px;" placeholder="kunci 1-100">
+                       
+                       
+
+                        <a class="btn btn-primary" id="dekripsiButton" >Dekripsi</a>
+                    </div>
+                </div>
+            
+                <div style="width:100px;">
+                    <p id="hasilDekrip" style="display: block; margin-left: 10px; color:rgb(23, 24, 24); word-wrap: break-word;" ></p>
+                </div>
+            </div>
+        </header>
+        <script src="caisarChiper.js"></script>
+
+        <script>
+            document.getElementById("enkripsiButton").addEventListener("click",myEncript);
+            document.getElementById("dekripsiButton").addEventListener("click",myDecript);
+            document.getElementById("start").addEventListener("click",scroll);
+
+            function scroll(){
+                element = document.getElementById("enkripsiButton");
+                element.scrollIntoView();
+            }
+
+            function myEncript(){
+                
+
+                let p = document.getElementById("input1").value
+                let k = Number(document.getElementById("kunci1").value)
+                console.log(p,k)
+                let c = EncripcaisarChiper(p,k)
+                document.getElementById("hasilEnkrip").innerHTML = c
+                document.getElementById("hasilEnkrip").style.backgroundColor = "#5de37f"
+
+                return c
+                
+
+
+            }
+            function myDecript(){
+                
+                let c = document.getElementById("input2").value
+                let k = Number(document.getElementById("kunci2").value)
+                let p = DecripCaisalChiper(c,k)
+                document.getElementById("hasilDekrip").innerHTML = p
+                document.getElementById("hasilDekrip").style.backgroundColor = "#5de37f"
+
+            }
+
+           
+        </script>
+        <!-- About-->
+        
